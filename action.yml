@@ -33,15 +33,8 @@ runs:
         python-version: ${{ inputs.python-version }}
         cache: 'pip'
         cache-dependency-path: ${{ inputs.requirements-txt }}
-    - name: Set up Python version ${{ inputs.python-version }} (auto cache)
-      id: auto-cache-setup
-      if: ${{ !inputs.requirements-txt }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ inputs.python-version }}
-        cache: 'pip'
     - name: Set up Python version ${{ inputs.python-version }} (no cache)
-      if: ${{ steps.auto-cache-setup.outcome == 'failure' }}
+      if: ${{ !inputs.requirements-txt }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ inputs.python-version }}
