@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       new-version: ${{ steps.run-increment-version.outputs.new-version }}
+    permissions:
+      contents: write
     steps:
       - name: Run the increment-version action
         id: run-increment-version
