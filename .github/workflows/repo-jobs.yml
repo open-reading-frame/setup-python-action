@@ -21,6 +21,7 @@ jobs:
         uses: open-reading-frame/increment-version-action@main
         with:
           protect-tag: true
+          token: ${{ secrets.INCREMENT_VERSION }}
   check-version:
     if: ${{ github.event_name == 'pull_request' }}
     name: Check Version
