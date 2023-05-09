@@ -8,8 +8,6 @@ on:
   schedule:
     - cron: '21 13 * * 2'
 
-name: repo-jobs
-
 on:
   push:
     branches: [main]
