@@ -34,6 +34,7 @@ runs:
         cache: 'pip'
         cache-dependency-path: ${{ inputs.requirements-txt }}
     - name: Set up Python version ${{ inputs.python-version }} (no cache)
+      if: ${{ !inputs.requirements-txt }}
       uses: actions/setup-python@v4
       with:
         python-version: ${{ inputs.python-version }}
