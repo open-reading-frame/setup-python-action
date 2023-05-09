@@ -25,6 +25,8 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     name: Check Version
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Run the check-version action
         id: run-check-version
