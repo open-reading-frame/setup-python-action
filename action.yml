@@ -23,6 +23,8 @@ inputs:
     default: null
     required: false
 
+# comment for testing
+
 runs:
   using: composite
   steps:
